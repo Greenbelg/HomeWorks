@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[english,main=russian]{babel}
+
+\begin{document}
+
+\noindent \textbf{2. Ребята решили сыграть в тайного санту. Они написали свои имена на бумажках и сложили в шляпу, а сейчас вытягивают имена человека, кому они будут дарить подарок. Какова вероятность того, что никто не вытянет свое же имя?}
+
+Пусть n - количество ребят, пронумеруем их от 1 до n. Предположим, что по имени можно однозначно определить ребенка.
+\[
+  perm = 
+  \begin{pmatrix}
+    1 & 2 &  \ldots & n \\  
+    k_1 & k_2 & \ldots & k_n  
+  \end{pmatrix}
+\]
+
+\begin{center}
+i - номер ребенка, который вытягивает бумажку,\\
+$k_i$ - номер ребенка, чье имя написано на бумажке.
+\end{center}
+
+Переформулируем условие задачи: необходимо найти вероятность такой перестановки perm, что элемент $i \neq k_i \text{, } \forall i \in \overline{1..n}$. Такая перестановка -  перестановка без неподвижных точек, и их число равно субфакториалу: $!n = n!*\sum_{k=0}^n\frac{(-1)^k}{k!}$.
+
+Количество всех перестановок - n!. Значит, необходимая вероятность \[P(n) = \frac{!n}{n!} = \sum_{k=0}^n\frac{(-1)^k}{k!}\].
+
+\noindent \textbf{3. Из чисел 1,2,…,N случайно выбирается число $a$. Найти вероятность $P$ того, что: (Найти для каждого случая $\lim_{N \to \infty }P_{N}$)}
+\begin{itemize}
+\item  \textbf{число $a$ не делится ни на $a_{1}$ ни на $a_{2}$, где $a_{1}$ и $a_{2}$ — фиксированные натуральные взаимно простые числа;}
+
+Пусть $c_1 = [\frac{N}{a_1}] \text{(целая часть $\frac{N}{a_1}$), } c_2 = [\frac{N}{a_2}]$ - они отображают, какое количество чисел между 1 и $N$ делятся на $a_1$ и $a_2$, соответственно.
+
+Тогда $P_N = \frac{N - c_1}{N} * \frac{N - c_2}{N}$.
+
+\begin{align*}
+\lim_{N \to \infty}P_{N} = \lim_{N \to \infty} (\frac{N - c_1}{N} * \frac{N - c_2}{N}) \geq \text{[т.к. $c_1 \leq \frac{N}{a_1}$, $c_2 \leq \frac{N}{a_2}$]} \geq \lim_{N \to \infty} (\frac{N - \frac{N}{a_1}}{N} * \frac{N - \frac{N}{a_2}}{N}) = \\
+= (1 - \frac{1}{a_1}) * (1 - \frac{1}{a_2})
+\end{align*}
+\begin{align*}
+\lim_{N \to \infty}P_{N} = \lim_{N \to \infty} (\frac{N - c_1}{N} * \frac{N - c_2}{N}) \leq \text{[т.к. $c_1 \geq \frac{N}{a_1} - 1$, $c_2 \geq \frac{N}{a_2} - 1$]} \leq \\ 
+\leq \lim_{N \to \infty} (\frac{N - \frac{N}{a_1} + 1}{N} * \frac{N - \frac{N}{a_2} + 1}{N}) = (1 - \frac{1}{a_1}) * (1 - \frac{1}{a_2})
+\end{align*}
+
+Значит, $P_N \rightarrow_{N \to \infty} (1 - \frac{1}{a_1}) * (1 - \frac{1}{a_2})$;
+
+\item  \textbf{число a не делится ни на какое из чисел $a_{1}, a_{2}, …, a_{k}$, где числа $a_{i}$ — натуральные и попарно взаимно простые}
+
+Аналогичные рассуждения: находим $c_i$, $\forall i \in \overline{1..k}$
+
+Тогда $P_N = \frac{N - c_1}{N} * \frac{N - c_2}{N} * \ldots * \frac{N - c_k}{N}$.
+
+Также оценив пределы, по лемме о 2х миллиционерах получаем: 
+
+$P_N \rightarrow_{N \to \infty} (1 - \frac{1}{a_1}) * (1 - \frac{1}{a_2}) * \ldots * (1- \frac{1}{a_k})$.
+\end{itemize}
+\end{document}
