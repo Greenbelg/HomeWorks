@@ -1,1 +1,38 @@
 \documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[english,main=russian]{babel}
+\usepackage{graphicx}
+\graphicspath{{.}}
+
+\begin{document}
+\noindent \textbf{Задача 3.5}
+
+
+\begin{gather*} \lim_{(x, y) \to (+\infty, +\infty)} \left( \frac{xy}{x^2 + y^2}\right)^{x^2} = \left[x = r cos\alpha, y = r  sin\alpha \right] =\lim_{ r \to +\infty} \left( \frac{r^2 sin\alpha cos\alpha}{r^2}\right)^{r^2cos^2\alpha} = \\
+\noindent = \lim_{ r \to +\infty} \left( sin\alpha cos\alpha \right)^{r^2cos^2\alpha} = [\text{т.к. } |sin\alpha cos\alpha |= |q| < 1, |q|^x \to_{x \to \infty} 0] = 0
+\end{gather*}
+
+\noindent \textbf{Задача 3.6}
+
+\begin{gather*}
+\lim_{(x, y) \to (0, 0)} \left(x^2 + y^2 \right)^{x^2 y^2} = \left[x = r cos\alpha, y = r  sin\alpha \right] = \lim_{r \to 0} \left(r^2 \right)^{r^4 cos^2\alpha sin^2\alpha} = \lim_{r \to 0} \left(e \right)^{2(\ln{r}) r^4 cos^2\alpha sin^2\alpha }\\
+\text{Рассмотрим } \lim_{r \to 0}(2(\ln{r}) r^4 cos^2\alpha sin^2\alpha) =  2cos^2\alpha sin^2\alpha \lim_{r \to 0}\left(\frac{\ln r}{\frac{1}{r^4}}\right) = [\text{неопределенность } \frac{\infty}{\infty}\\
+\text{ - правило Лопиталя }] = 2 cos^2\alpha sin^2\alpha\lim_{r \to 0}\left(\frac{1}{-\frac{4r}{r^5}}\right) = 0 \text{. Значит, исходный предел равен $e^0=1$}
+\end{gather*}
+
+\noindent \textbf{Задача 3.7}
+
+\begin{gather*}
+\lim_{(x, y) \to (1, 0)} \frac{\ln(x+e^y)}{\sqrt{x^2 + y^2}} = \ln2
+\end{gather*}
+
+\noindent \textbf{Задача 3.8}
+
+\begin{gather*}
+\lim_{(x, y) \to (+0, +0)} \frac{\ln(x+e^y)}{\sqrt{x^2 + y^2}} = \left[x = r cos\alpha, y = r  sin\alpha \right] = \lim_{r \to +0} \frac{\ln(r cos\alpha+e^{r sin\alpha})}{r} = \\ = [\text{неопределенность } \frac{0}{0} \text{ - правило Лопиталя }] =  \lim_{r \to +0} \frac{cos\alpha +e^{r sin\alpha}sin\alpha}{r cos\alpha+e^{r sin\alpha}} = \\
+= cos\alpha + sin\alpha \text{. Результат зависит от угла $\alpha$, значит, предела не существует.}
+\end{gather*}
+\end{document}
+
