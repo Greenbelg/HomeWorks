@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[english,main=russian]{babel}
+\usepackage{graphicx}
+\graphicspath{{.}}
+
+\begin{document}
+\noindent \textbf{1.1. Найти $\frac{\partial^3 u}{\partial x^2 \partial y}$, $u = x ln(xy).$}
+\vspace{1mm}
+
+$\frac{\partial^3 u}{\partial x^2 \partial y}$ = $\frac{\partial^2}{\partial x^2}[\frac{\partial}{\partial y}\{x ln(xy)\}]$ = $\frac{\partial}{\partial x}[\frac{\partial}{\partial x}(\frac{x}{y})]$ = 
+$\frac{\partial}{\partial x}(\frac{1}{y}) = 0$.
+\vspace{3mm}
+
+\noindent \textbf{3.3. Найти частные производные первого и второго порядков функции: $u = f(x,xy,xyz);$}
+
+$u = u(x,y,z)$. Найдем частные производные первого порядка: 
+\begin{itemize}
+\item $u_x'$ = $\frac{\partial u}{\partial x}$ = $f_1'(x)_x' + f_2'(xy)_x' + f_3'(xyz)_x'$ = $f_1' + f_2'y + f_3'yz$;
+\item $u_y'$ = $\frac{\partial u}{\partial y}$ = $f_1'(x)_y' + f_2'(xy)_y' + f_3'(xyz)_y'$ = $f_1'0 + f_2'x + f_3'xz$ = $f_2'x + f_3'xz$;
+\item $u_z'$ = $\frac{\partial u}{\partial z}$ = $f_1'(x)_z' + f_2'(xy)_z' + f_3'(xyz)_z'$ = $f_3'xy$;
+\end{itemize}
+
+$f_i'$, i обозначает аргумент, по которму дифференцируется $f=f(x_1,x_2,x_3)$, где $x_1(t_1,t_2,t_3), x_2(t_1,t_2,t_3), x_3(t_1,t_2,t_3)$;
+\vspace{1mm}
+
+$f_1'=f_1'(x_1,x_2,x_3), f_2'=f_2'(x_1,x_2,x_3), f_3'=f_3'(x_1,x_2,x_3)$;
+
+Найдем частные производные второго порядка (найдем только $u_{xy}'', u_{xz}'', u_{yz}'', u_{xx}'', u_{yy}'', u_{zz}''$, остальные равны найденным по теореме о равенстве смешанных производных):
+\begin{itemize}
+\item $u_{xx}'' = (u_x')_x' = (f_1' + f_2'y + f_3'yz)_x' = [f_{11}''(x)_x' + f_{12}''(xy)_x' + f_{13}''(xyz)_x']+$\vspace{1mm}
+
+$+[(f_{21}''(x)_x' + f_{22}''(xy)_x' + f_{23}''(xyz)_x')y + f_2'(y)_x']+[(f_{31}''(x)_x' + f_{32}''(xy)_x' +$\vspace{1mm}
+
+$+ f_{33}''(xyz)_x')(yz) + f_3'(yz)_x'] = [f_{11}'' + f_{12}''y+ f_{13}''yz]+[f_{21}''y + f_{22}''y^2 + f_{23}''y^2z]$\vspace{1mm}
+
+$+[f_{31}''yz + f_{32}''y^2z + f_{33}''y^2z^2]$;
+
+\item $u_{yy}'' = (u_y')_y' = (f_2'x + f_3'xz)_y' = [(f_{21}''(x)_y' + f_{22}''(xy)_y' + f_{23}''(xyz)_y')x +$\vspace{1mm}
+
+$+f_2'(x)_y']+[(f_{31}''(x)_y' + f_{32}''(xy)_y' + f_{33}''(xyz)_y')xz + f_3'(xz)_y'] =$\vspace{1mm}
+
+$=[f_{22}''x^2 + f_{23}''x^2z]+[f_{32}''x^2z + f_{33}''x^2z^2]$;
+
+\item $u_{zz}'' = (u_z')_z' = (f_3'xy)_z' = [(f_{31}''(x)_z' + f_{32}''(xy)_z' + f_{33}''(xyz)_z')xy + f_3'(xy)_z'] =$\vspace{1mm}
+
+$=[f_{33}''x^2y^2]$;
+
+\item $u_{xy}'' = (u_x')_y' = (f_1' + f_2'y + f_3'yz)_y' = (f_1')_y' + (f_2'y)_y' + (f_3'yz)_y' =$
+\vspace{1mm}
+
+$= [f_{11}''(x)_y' + f_{12}''(xy)_y' + f_{13}''(xyz)_y'] + [(f_{21}''(x)_y' + f_{22}''(xy)_y' + f_{23}''(xyz)_y')y+$\vspace{1mm}
+
+$+f_2'(y)_y'] + [(f_{31}''(x)_y' + f_{32}''(xy)_y' + f_{33}''(xyz)_y')yz+f_3'(yz)_y']=[ f_{12}''x + f_{13}''xz]+$\vspace{1mm}
+
+$+[f_{22}''xy+ f_{23}''xyz + f_2'] + [f_{32}''xyz + f_{33}''xyz^2+f_3'z]$;
+
+\item $u_{xz}'' = (u_x')_z' = (f_1' + f_2'y + f_3'yz)_z' = (f_1')_z' + (f_2'y)_z' + (f_3'yz)_z' =$
+\vspace{1mm}
+
+$=$ [похожие преобразования] $= [f_{13}''xy] + [f_{23}''xy^2] + [f_{33}''xy^2z+f_3'y]$;
+
+\item $u_{yz}'' = (u_y')_z' = (f_2'x)_z' + (f_3'xz)_z' = $ [похожие преобразования] 
+\vspace{1mm}
+
+$=[f_{23}''x^2y]+[f_{33}''x^2yz+f_3'x]$.
+\end{itemize}
+\vspace{3mm}
+
+\noindent \textbf{3.4. Найти частные производные первого и второго порядков функции: $\frac{\partial^2  u}{\partial x \partial y}$, если $u = f(x+y,xy);$}
+\vspace{1mm}
+
+Найдем $\frac{\partial^2  u}{\partial x \partial y} = \frac{\partial }{\partial x}(u_y') = \frac{\partial }{\partial x}(f_1'(x+y)_y'+f_2'(xy)_y') = \frac{\partial }{\partial x}(f_1' + f_2'x) =$
+\vspace{1mm}
+
+$= (f_1' + f_2'x)_x' =[f_{11}''(x+y)_x' + f_{12}''(xy)_x'] + [(f_{21}''(x+y)_x'+f_{22}''(xy)_x')x+f_2']=$\vspace{1mm}
+
+$= [f_{11}''+f_{12}''y]+[f_{21}''x + f_{22}''xy + f_2']$.
+\vspace{3mm}
+
+\noindent \textbf{4.2. Найти производные функции: $f(x,y)=x^2-xy+y^2$ в точке $M(1,1)$ в направлении, составляющем угол $\alpha$ с положительным направлением оси абсцисс.}
+\vspace{1mm}
+
+Пусть $A = (cosa, sina)$ - вектор направления. Найдем производную по направлению $A$ в точке $M$: $f_A'(M) = f_x'(M)cosa + f_y'(M)sina =$ \vspace{1mm}
+
+\noindent$=(2*1-1)cosa+(-1+2*1)sina=cosa+sina$, $a \in (-\frac{\pi}{2};\frac{\pi}{2})$.
+
+При $a = \frac{\pi}{4}, A = (cos(\frac{\pi}{4}), sin(\frac{\pi}{4}))$ будет достигаться наибольшее значение функции производной (равное $\sqrt{2}$), т.к. $a$ не может равняться $-\frac{\pi}{2}$, наименьшего значения производная не достигает. В направлении $A = (cos(-\frac{\pi}{4}),sin(-\frac{\pi}{4}))$ производная равна 0.
+\vspace{3mm}
+
+\end{document}
