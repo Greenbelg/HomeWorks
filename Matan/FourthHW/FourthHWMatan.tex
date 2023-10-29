@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[english,main=russian]{babel}
+\usepackage{graphicx}
+\graphicspath{{.}}
+
+\begin{document}
+
+\noindent \textbf{0.2. Найти полные дифференциалы первого и второго порядков функции:
+$u = f(\xi, \eta, \theta), \xi = x^2 + y^2, \eta = x^2 - y^2, \theta = 2xy$}
+\vspace{3mm} 
+
+\noindent $d u = \frac{\partial f}{\partial \xi}d \xi + \frac{\partial f}{\partial \eta} d \eta + \frac{\partial f}{\partial \theta}d \theta = \frac{\partial f}{\partial \xi}d (x^2+y^2) + \frac{\partial f}{\partial \eta} d (x^2-y^2) + \frac{\partial f}{\partial \theta}d (2xy) =$\vspace{1mm}
+
+\noindent$=[\frac{\partial f}{\partial \xi}2xdx + \frac{\partial f}{\partial \xi}2ydy]  + [\frac{\partial f}{\partial \eta} 2xdx - \frac{\partial f}{\partial \eta} 2ydy] + 2[\frac{\partial f}{\partial \theta}ydx + \frac{\partial f}{\partial \theta}xdy] =$\vspace{1mm}
+
+\noindent$ = 2(x\frac{\partial f}{\partial \xi} + x\frac{\partial f}{\partial \eta} + y \frac{\partial f}{\partial \theta})dx + 2(y\frac{\partial f}{\partial \xi} - y\frac{\partial f}{\partial \eta} + x\frac{\partial f}{\partial \theta} )dy$.\vspace{3mm}
+
+\noindent$d(du) = d(2(x\frac{\partial f}{\partial \xi} + x\frac{\partial f}{\partial \eta} + y \frac{\partial f}{\partial \theta})dx + 2(y\frac{\partial f}{\partial \xi} - y\frac{\partial f}{\partial \eta} + x\frac{\partial f}{\partial \theta} )dy)=$\vspace{1mm}
+
+\noindent$= 2d(x\frac{\partial f}{\partial \xi} + x\frac{\partial f}{\partial \eta} + y \frac{\partial f}{\partial \theta})dx + 2d(y\frac{\partial f}{\partial \xi} - y\frac{\partial f}{\partial \eta} + x\frac{\partial f}{\partial \theta} )dy=$\vspace{1mm}
+
+\noindent$= 2d(x\frac{\partial f}{\partial \xi})dx + 2d(x\frac{\partial f}{\partial \eta})dx + 2d(y \frac{\partial f}{\partial \theta})dx +  2d(y\frac{\partial f}{\partial \xi})dy - 2d(y\frac{\partial f}{\partial \eta})dy + 2d(x\frac{\partial f}{\partial \theta} )dy=$\vspace{1mm}
+
+\noindent$ = 2[(\frac{\partial f}{\partial \xi})dx^2 + xd(\frac{\partial f}{\partial \xi})dx] + 2[(\frac{\partial f}{\partial \eta})dx^2 + xd(\frac{\partial f}{\partial \eta})dx] + 2[(\frac{\partial f}{\partial \theta})dxdy + yd(\frac{\partial f}{\partial \eta})dx]+$\vspace{1mm}
+
+\noindent$+ 2[(\frac{\partial f}{\partial \xi})dy^2 + yd(\frac{\partial f}{\partial \xi})dy] - 2[(\frac{\partial f}{\partial \eta})dy^2 + yd(\frac{\partial f}{\partial \eta})dy] + 2[(\frac{\partial f}{\partial \theta})dxdy + xd(\frac{\partial f}{\partial \eta})dy]=$\vspace{1mm}
+
+\noindent$=2[\frac{\partial f}{\partial \xi} + \frac{\partial f}{\partial \eta}]dx^2 + 2[\frac{\partial f}{\partial \xi} - \frac{\partial f}{\partial \eta}]dy^2 + 4[\frac{\partial f}{\partial \theta}]dxdy+$\vspace{1mm}
+
+\noindent$+ 2[xd(\frac{\partial f}{\partial \xi})+xd(\frac{\partial f}{\partial \eta})+yd(\frac{\partial f}{\partial \eta})]dx + $ \vspace{1mm}
+
+\noindent$+ 2[yd(\frac{\partial f}{\partial \xi})-yd(\frac{\partial f}{\partial \eta})+xd(\frac{\partial f}{\partial \eta})]dy$.\vspace{3mm}
+
+\noindent Осталось подставить зачения:\vspace{1mm}
+
+\noindent$d(\frac{\partial f}{\partial \xi}) =  2(x\frac{\partial^2 f}{\partial \xi^2} + x\frac{\partial^2 f}{\partial \eta \partial \xi} + y \frac{\partial^2 f}{\partial \theta \partial \xi})dx + 2(y\frac{\partial^2 f}{\partial \xi^2} - y\frac{\partial^2 f}{\partial \eta \partial \xi} + x\frac{\partial^2 f}{\partial \theta \partial \xi} )dy$;\vspace{1mm}
+
+\noindent$d(\frac{\partial f}{\partial \eta}) =  2(x\frac{\partial^2 f}{\partial \xi \partial \eta} + x\frac{\partial^2 f}{\partial \eta^2} + y \frac{\partial^2 f}{\partial \theta \partial \eta})dx + 2(y\frac{\partial^2 f}{\partial \xi \partial \eta} - y\frac{\partial^2 f}{\partial \eta^2} + x\frac{\partial^2 f}{\partial \theta \partial \eta} )dy$;\vspace{1mm}
+
+\noindent$d(\frac{\partial f}{\partial \theta}) =  2(x\frac{\partial^2 f}{\partial \xi \partial \theta} + x\frac{\partial^2 f}{\partial \eta \partial \theta} + y \frac{\partial^2 f}{\partial \theta^2})dx + 2(y\frac{\partial^2 f}{\partial \xi \partial \theta} - y\frac{\partial^2 f}{\partial \eta \partial \theta} + x\frac{\partial^2 f}{\partial \theta^2} )dy$.\vspace{3mm}
+
+\noindent \textbf{4.2. Найти первую и вторую производные функции y(x), определяемойиз уравнения: $\ln(\sqrt{x^2+y^2}) = \arctg(\frac{y}{x})$}\vspace{1mm}
+
+\noindent Дифференцируем исходную функцию по $x, y = y(x)$:\vspace{1mm}
+
+\noindent$\frac{1}{\sqrt{x^2+y^2}}\frac{2x+2yy'}{2\sqrt{x^2+y^2}}=\frac{1}{1+(\frac{y}{x})^2}\frac{xy'-y}{x^2}$\vspace{1mm}
+
+\noindent$\frac{x+yy'}{x^2+y^2}=\frac{xy'-y}{x^2 + y^2}$\vspace{1mm}
+
+\noindent$x+yy'=xy'-y$\vspace{1mm}
+
+\noindent$y'(y-x)=-y-x$\vspace{1mm}
+
+\noindent$y'=\frac{x+y}{x-y}$\vspace{1mm}
+
+\noindent$y''=(\frac{x+y}{x-y})' = \frac{(x-y)(1+y')-(x+y)(1-y')}{(x-y)^2} = \frac{x-y+xy'-yy'-x-y+xy'+yy'}{(x-y)^2}=\frac{2xy'-2y}{(x-y)^2}=$\vspace{1mm}
+
+\noindent$= \frac{2x(\frac{x+y}{x-y})-2y}{(x-y)^2} =\frac{2x^2+2xy-2xy+2y^2}{(x-y)^3} =\frac{2y^2+2x^2}{(x-y)^3}$.\vspace{3mm}
+
+\noindent \textbf{5.2. Найти дифференциалы первого и второго порядков функции $u = u(x, y):$}\vspace{1mm}
+
+\noindent$x+y+u = e^{-(x+y+u)}$\vspace{1mm}
+
+\noindent$e^{\ln{(x+y+u)}} = e^{-(x+y+u)}$\vspace{1mm}
+
+\noindent$\ln{(x+y+u)} = -(x+y+u)$\vspace{1mm}
+
+\noindent$d(\ln{(x+y+u)}) +dx+dy+du = 0$\vspace{1mm}
+
+\noindent$\frac{dx+dy+du}{x+y+u} +dx+dy+du = 0$\vspace{1mm}
+
+\noindent$(dx+dy+du)(\frac{1}{x+y+u} +1) = 0$\vspace{1mm}
+
+\noindent$(dx+dy+du)(\frac{1+x+y+u}{x+y+u}) = 0$\vspace{1mm}
+
+\noindent$du = -\frac{x+y+u}{1+x+y+u}\frac{dx+dy+xdx+xdy+ydx+ydy+udx+udy}{x+y+u}$\vspace{1mm}
+
+\noindent$du = -dx-dy$\vspace{1mm}
+
+\noindent$d(du) = -d(dx)-d(dy)$\vspace{1mm}
+
+\noindent Т.к. $y=y(x)$: 
+
+\noindent$du^2 = 0$
+
+
+
+\end{document}
